@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: aqua;
+}
+@media screen and (min-width: 600px) {
+    body {
+      background-color: #fff;
+    }
+  }
+.header{
+    display: grid;
+    height: 80px;
+    grid-template-columns: 20% 46% 37%;
+}
+.header .img1 img{
+    margin-left: 230px;
+    margin-top: 25px;
+}
+.header .link{
+    margin-left: 35%;
+    margin-top: 15px;
+}
+.header .link ol{
+    list-style: none;
+   }
+.header .link ol li{
+    display: inline-block;
+    padding: 10px;
+}
+.header .link ol li a{
+    text-decoration: none;
+    position: relative;
+    font-size: 20px;
+    color: #000;
+    text-transform: capitalize;
+    padding:10px;
+}
+.header .link ol li a:hover{
+    z-index: 0;
+    font-weight: 600;
+}
+.header .link ol li a::before{
+    content: "";
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top:2px solid navy ;
+    border-bottom:2px solid navy ;
+    transform: scale(1);
+    opacity: 0;
+    transition: 0.5s;
+    z-index: -1;
+
+}
+.header .link ol li a:hover::before{
+    transform: scale(1);
+    opacity: 1;
+}
+.header .link ol li a::after{
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-right:2px solid navy ;
+    border-left:2px solid navy ;
+    transform: scale(0);
+    transition: 0.6s;
+    z-index: -1;
+    grid-area:5 ;
+}
+.header .link ol li a:hover::after{
+    transform: scale(1);
+} 
+.header .link ol .dropdown {
+    position: relative;
+}
+.header .link ol .dropdown  ul {
+    position: absolute;
+    left: 45%;
+    margin-top: 10px;
+    width: 300px;
+    height: 300px;
+     transition:  0.7s;
+  opacity: 0;
+  transform: scale(0);
+}
+.header .link  .dropdown ul li{
+    list-style: none;
+    display: block;
+    background-color: gray;
+   padding: 10px;
+   text-transform: capitalize;
+   font-size: 20px;
+   color: rgb(143, 221, 247);
+   cursor: pointer;
+   
+}
+.header .link ol  .dropdown:hover  .menu {
+transform: scale(1);
+opacity: 1;
+}
+.header .icon{
+    margin-top: 25px;
+    margin-left: 20%;
+    position: relative;
+}
+.header .icon svg{
+    font-size: 28px;
+    padding: 5px;
+}
+.header .icon span{
+    background-color: blue;
+    color: #fff;
+    position: absolute;
+   top:  -10px;
+left: 50px;
+    font-size: 15px;
+    padding: 3px 6px;
+    border-radius: 50%;
+}
+.header .icon .buy{
+    position: absolute;
+    top: -8.5px;
+    margin-left: 15%;
+    border: 2px solid lightgrey;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #000;
+    text-transform: capitalize;
+    padding: 10px 40px;
+    font-family: sans-serif;
+}
+.header .icon .buy:hover{
+    background-color: blue;
+    color: #fff;
+    border: none;
+}
+.container{
+    height: 82vh;
+    background-color: rgb(213, 226, 230);
+}
+/* .container .blue{
+    background-color: blue;
+} */
+/* .container .lightblue{
+
+} */
+.container img{
+    position: absolute;
+    
+    /* left: 270px; */
+    left: 290px;
+    width: 25%;
+    height: 82vh;
+    animation-name: change;
+    animation-duration: 2s;
+}
+@keyframes change{
+    0%{
+        left: 0;
+        ;
+    }
+    50%{
+        /* left:270px ; */
+        left: 290px;
+        transform: rotate(10deg); 
+    }
+}
+.container .shop{
+    position: absolute;
+    left: 50%;
+    top: 45%;
+}
+.container .shop h2{
+    font-size: 30px;
+    font-family: sans-serif;
+    font-weight: 300;
+    color: rgb(97, 94, 94);
+}
+.container .shop h1{
+    font-size: 50px;
+    text-transform: uppercase;
+    font-family: sans-serif;
+   -webkit-text-stroke: 2px #000;
+   color: transparent;
+   animation: shine 2s forwards, flicker 3s infinite;
+}
+.container .shop h1 .shine{
+    animation: shine 2s forwards, blink 3s 2s infinite;
+}
+@keyframes shine {
+    0% {
+      
+      color: orange;
+      -webkit-text-stroke: 2px yellow;
+    }
+    100% {
+      color: palevioletred;
+      -webkit-text-stroke: 2px rgb(236, 28, 97);
+         }
+  }
+  @keyframes blink {
+    0%, 20%
+    {
+      color:green ;
+      -webkit-text-stroke: 2px lawngreen;
+         }
+    
+    30%,50% {
+      color: #ff65bd;
+      
+    }
+   
+    97% {
+      color: fuchsia;
+      
+    }
+  }
+  
+  @keyframes flicker {
+    from {
+      opacity: 1;
+    }
+      10% {
+      opacity: 0.88;
+    }
+      20% {
+      opacity: 0.99;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .container .shop p{
+    margin-top: 20px;
+   padding: 5px 0px;
+    font-size: 18px;
+    color: gray;
+    font-family: sans-serif;
+  }
+  .container .shop .bth{
+text-decoration: none;
+margin-left:0%;
+background-color: blue;
+padding: 15px 30px;
+color: #fff;
+font-size: 20px;
+border-radius: 50px;
+font-family: sans-serif;
+text-transform: capitalize;
+  }
+  .container .shop .bth:hover{
+    background-color: transparent;
+    color: blue;
+    border: 2px solid gray;
+  }
+  .products{
+    margin-top: 100px;
+  }
+  .products .title{
+    font-weight: bold;
+    font-family: sans-serif;
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 35px;
+    padding: 10px 0 0;
+  }
+  .products .line {
+    width: 7%;
+    height: 3px;
+    margin: 10px auto;
+    padding: 1.5px;
+    background-color: #f75394;
+    transition: 0.5s;
+}
+.line:hover{
+    width: 12%;
+}
+.products .products-items{
+    
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    grid-column-gap:10px ;
+    padding: 15px 0;
+    
+}
+
+.products .products-items .photo-items{
+    margin-left: 166.5px;
+    position: relative;
+}
+.products .products-items .type-product{
+    font-size: 16px;
+    font-family: sans-serif;
+    text-transform: capitalize;
+    color: grey;
+    font-weight: 300;
+    padding: 5px;
+}
+.products .photo-items .name-product{
+    font-family: 'Oswald', sans-serif;
+    text-transform: capitalize;
+    font-size: 20px;
+}
+svg{
+    background-color: blue;
+   padding: 2px;
+   font-size: 20px;
+   position: absolute;
+   right: -95%;
+   bottom: 10px;
+   visibility: hidden;
+}
+.products .photo-items:hover svg{
+    visibility: visible;
+}
